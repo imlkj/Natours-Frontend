@@ -1,0 +1,32 @@
+@use "../abstracts/index" as *;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+
+  @include respond(tab-landscape) {
+    font-size: 56.25%; //1rem = 9px, 9/16*100 = 56.25%
+  }
+  @include respond(tab-portrait) {
+    font-size: 50%; //1rem = 8px, 8/16*100 = 50%
+  }
+  @include respond(desktop) {
+    font-size: 75%; //1rem = 12px, 12/16*100 = 75%
+  }
+}
+
+body {
+  box-sizing: border-box;
+  background-color: $color-grey-light-1;
+  padding: 3rem;
+
+  @include respond(tab-landscape) {
+    padding: 0;
+  }
+}

@@ -1,0 +1,35 @@
+@use "../abstracts/index" as *;
+
+.composition {
+  position: relative;
+  &__photo {
+    width: 55%; // always define the weidth of image in percentage it
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
+    border-radius: 2px;
+    position: absolute;
+    transition: all 0.2s;
+
+    &--p1 {
+      top: -2rem;
+      left: 0;
+    }
+    &--p2 {
+      top: 2rem;
+      right: 0;
+    }
+    &--p3 {
+      top: 10rem;
+      left: 20%;
+    }
+
+    &:hover {
+      transform: scale(1.5);
+      box-shadow: 0 2rem 5rem rgba($color-black, 0.4);
+      z-index: 1;
+    }
+  }
+  //compostion:hover compostion__photo:not(:hover)
+  &:hover &__photo:not(:hover) {
+    transform: scale(0.9);
+  }
+}
